@@ -1,0 +1,3 @@
+Make the Group22_FinalProject folder ur working directory
+
+Also, the wine tracker file won't open in java cuz its too big lol
