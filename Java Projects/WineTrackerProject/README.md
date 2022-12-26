@@ -1,0 +1,1 @@
+This Project is supposed to contain a very large file that contains Wine reviews from previous customers that are used in the search engine parameters. Since this file is too large to store on Github and the purpose of this upload is simply as a code sample, it has been excluded.
