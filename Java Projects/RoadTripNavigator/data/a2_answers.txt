@@ -1,0 +1,43 @@
+Part (3.1) Questions:
+1. What type of graph to use?
+This problem uses unidirectional paths from one city to another, as well as vertex weights for food expenses at each city.
+Clearly this problem calls for a Vertex weighted Digraph for the Shortest Path problem, however, for simply finding
+a path from one city to another without weights accounted for as in (3.2), as simple non-weighted directed graph will work.
+A VertexWeightedDigraph will be implemented for (3.4) however.
+
+2. What do nodes and Edges represent?
+Nodes represent cities which contain restaurants, where we get the weights from. Edges represent roads or paths from one city
+to another.
+
+3. How to use Graphs and Algorithms to solve the given problem?
+As stated before I will implement a simple BFS and DFS for 3.2/3.3. The real problem however is actually being solved in 3.4.
+To solve our road trip problem I have decided to implement a fake VertexWeightedDigraph. What I mean by this is instead of 
+actually storing the weights on the vertices, I will be implementing an EdgeWeightedDigraph with edge weights equal to 0.
+After doing this I well set the weights of the edges equal to the weight that would have been on the vertex at the head of the edge
+meaning the cost of the edge is the cost of going to that city. By implementing this fake VertexWeightedDigraph, I am able to use
+a simple Dijkstra's algorithm only slightly modified to account for the constraint of not being able to choose the same meal 
+in two successive cities. This makes what seems like a not-so-ordinary Shortest Path problem very ordinary and easy to implement
+using the simple work-around. For the meal choice condition mentioned above, I will create a state variable in my edge called 
+chosenMeal, which is updated after every sweep of relaxations, so that when I move to the next wave, I can use the edgeTo to
+grab the edge that leads to the tail vertex of my current edge and check what meal was purchased when that city was traveled to.
+This modified Dijkstra's algorithm will be used to find my shortest path a cost conscious student. But in all actuallity
+I would never go through this effort just to save a few bucks.
+
+
+Part(3.4) Questions:
+4. What is the complexity of this problem?
+The complexity of this problem is dependant on the Algorithm that is required to solve it. In my case I am using a modified
+Dijkstra's Algorithm which maintains the same run time of O(E log(V)) and space bound of O(V) with E being number of edges and 
+V being number of vertices. The reason for this run time comes from the fact that, "The number of vertices on the priority queue 
+is at most V, and there are three vertex-indexed arrays, which implies the space bound [V as mentioned above]. The algorithm uses
+V [inserts], V [deleteMins] and (in the worst case) E change priorities operations" [1]. Since Dijkstra's algorithm also makes
+use of a heap based priority queue which we know, as studied in chapter 2 of Algorithms, runs these operations in time proportional
+to log(V), we know that the Algorithm will run in the worst case proportional to O(E log(V)).
+
+5. Would complexity increase if the number of Cities, Stops or Restaurants increased?
+The simple answer is no. As stated before Dijkstra's algorithm runs in time proportional to O(E logV). This proportionality means
+that simply increasing the variables in the run time will simply scale the run time with the same proportionality. The only way to
+change the "complexity" of the problem is to change the problem itself. Add constraints that limit the algorithms we can use to solve
+it. Increasing cities just increases V. Increasing Stops(assuming this means adding more cities to make paths longer) simply increases
+the number of edges E and vertices V. Increasing the number of restaurants simply makes more possible meal options in each city. None 
+of these increases in variables actually increase the computational complexity of the problem.

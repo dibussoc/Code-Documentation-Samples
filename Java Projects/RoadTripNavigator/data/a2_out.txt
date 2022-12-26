@@ -1,0 +1,15 @@
+Part (3.2): BFS and DFS Paths -------------------------------------------------------------------------------------
+BFS: BOSTON,  NEW YORK CITY ,  PITTSBURGH ,  COLUMBUS ,  CHICAGO ,  MINNEAPOLIS 
+DFS: BOSTON,  NEW YORK CITY ,  PITTSBURGH ,  COLUMBUS ,  CHICAGO ,  ST. LOUIS ,  KANSAS CITY ,  MINNEAPOLIS 
+
+Part (3.4): Vertex Weighted Shortest Path -------------------------------------------------------------------------
+                City                         Meal Choice                     Cost of Meal($)
+         McDonald’s                    McChicken - Meal                                3.79
+         McDonald’s          Double Cheeseburger - Meal                                4.38
+         McDonald’s                    McChicken - Meal                                3.79
+         McDonald’s          Double Cheeseburger - Meal                                4.38
+         McDonald’s                    McChicken - Meal                                3.79
+ 
+Note: **THIS FILE IS PRODUCED BY THE main() FUNCTION WHEN RUNNING: VertexWeightedDigraph.java.
+**FOR JUNIT TESTING OF DFS AND BFS RUN DepthFirstSearchTest.java AND BreadthFirstSearchTest.java, RESPECTIVELY.
+

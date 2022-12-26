@@ -1,0 +1,25 @@
+SFWR ENG 2XB3
+Christopher DiBussolo
+400070368
+3/30/2018 "I, Christopher DiBussolo, attest to the fact that the work being submitted by me is my own work." - Chris DiBussolo, 2018
+
+Design Decisions:
+	My design decisions and algorithmic reasoning was thoroughly explained in data/a2_answers.txt so I won't
+bother explaining that here. Some side notes, many extra methods were added to the standard DFS/BFS/Dijkstra/Graphs
+formula we covered in class for ease of access in this assignment. Such methods include various accessor
+methods mainly for checking validity of vertices/edges as well as accessor for many custom state variables
+I chose to use in my design. Many methods were also implemented simply for modularity in testing so my main
+functions were not cluttered. I was also not sure if we had to run part(3.4) through a junit, so I chose
+to keep the testing and outputs in the main() function of VertexWeightedDigraph.java. Similarly, the 
+method of running and testing my DFS and BFS in the junit can originally be found in the main function of
+Graph.java. 
+
+Overall, in order to run everything done in this assignment the following files should be run:
+ VertexWeightedDigraph.java, DepthFirstSearchTest.java, BreadthFirstSearchTest.java. 
+
+	For a list of everything I used references for when producing and designing my solution to this assignment
+see data/References.txt. For the IEEE of works cited (literally just the textbook), see data/WorksCited.txt.
+For my analysis of the problem and my design decisions, see data/a2_answers.txt. Have a nice day.
+
+Cheers,
+	-Chris DiBussolo, 3/30/2018

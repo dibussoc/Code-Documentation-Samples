@@ -1,0 +1,15 @@
+References:
+
+Princeton Library (same one used in labs: edu.princeton.cs.algs4):
+Many classes from the princeton library were utilized in the implementation of these Algorithms.
+Such classes include: In, Bag, Stack, IndexMinPQ.
+Part's of Princeton's standard Dijkstra's Algorithm for graphs of integers from the algs4.jar and Algorithms textbook 
+was used as a basis for the modified custom version implemented in this assignment.
+Princeton's EdgeWeightedGraph was also used to form an idea of how to make my VertexWeightedGraph, although only a few of the methods were useful
+as reference for my implementation.
+Princeton's DirectedEdges was referenced simply to see what the state variables should look like.
+
+In class Labs material:
+The basic DFS and BFS for integers that we implemented in lab was used as a basis and modified to produce the custom
+version needed and used in this assignment.
+Also the Graph.java we made in lab was used slightly as reference for the Graph.java implementation in this assignment.
