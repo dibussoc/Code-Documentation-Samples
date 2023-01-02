@@ -1,0 +1,14 @@
+The part of the code that takes the most amount of time is the denoiseImage
+function. Specifically, within the denoiseImage function the most expensive
+component is the accessing and modifying of the array elements for each RGB
+value. The reason this is so expensive is because the array must be accessed
+for every single element in a filtering window, and then multiply that by the
+number of pixels in the image. Overall, this is a very large amount of memory
+accesses, making this part of the program far more expensive than the rest. This
+is particularly apparent in the median method of filtering, as for every pixel
+my code accesses three arrays n*n times each, then multiply that by the number
+of pixels, as opposed to mean which only has to access an array when storing the
+results. This concept is why the mean method is MUCH faster than the median
+method, especially with a large filter window size, as you have ALOT more
+memory accesses the larger the window size (see Timing_Table for example of
+timing difference between mean and median methods).

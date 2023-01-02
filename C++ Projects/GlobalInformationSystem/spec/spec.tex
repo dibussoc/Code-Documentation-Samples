@@ -1,0 +1,724 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{hhline}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+
+\oddsidemargin 0mm
+\evensidemargin 0mm
+\textwidth 160mm
+\textheight 200mm
+\renewcommand\baselinestretch{1.0}
+
+\pagestyle {plain}
+\pagenumbering{arabic}
+
+\newcounter{stepnum}
+
+%% Comments
+
+\usepackage{color}
+
+\newif\ifcomments\commentstrue
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{blue}{SS}{#1}}
+
+\title{Assignment 3, Part 1, Specification}
+\author{SFWR ENG 2AA4}
+
+\begin {document}
+
+\maketitle
+
+The purpose of this software design exercise is to design and implement a
+portion of the specification for a Geographic Information System (GIS).  This
+document shows the complete specification, which will be the basis for your
+implementation and testing.  In this specification natural numbers
+($\mathbb{N}$) include zero ($0$).
+
+\wss{The parts that you need to fill in are marked by comments, like this one.
+  In several of the modules local functions are specified.  You can use these
+  local functions to complete the missing specifications.}
+
+\newpage
+
+\section* {Map Types Module}
+
+\subsection*{Module}
+
+MapTypes
+
+\subsection* {Uses}
+
+N/A
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+
+None
+
+\subsubsection* {Exported Types}
+
+CompassT = \{N, S, E, W\}\\ 
+LanduseT = \{Recreational, Transport, Agricultural, Residential, Commercial\}\\
+RotateT = \{CW, CCW\}
+
+\subsubsection* {Exported Access Programs}
+
+None
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+None
+
+\subsubsection* {State Invariant}
+
+None
+
+\newpage
+
+\section* {Point ADT Module}
+
+\subsection*{Template Module}
+
+PointT
+
+\subsection* {Uses}
+
+N/A
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Types}
+PointT = ?\\
+\wss{What should be written here?}
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+PointT & $\mathbb{Z}$, $\mathbb{Z}$ & PointT & \\
+\hline
+x & ~ & $\mathbb{Z}$ & ~\\
+\hline
+y & ~ & $\mathbb{Z}$ & ~\\
+\hline
+translate & $\mathbb{Z}$, $\mathbb{Z}$ & PointT & ~\\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+$xc$: $\mathbb{Z}$ \wss{What is the type of the state variables?}\\
+$yc$: $\mathbb{Z}$ \wss{What is the type of the state variables?}
+
+\subsubsection* {State Invariant}
+
+None
+
+\subsubsection* {Assumptions}
+
+The constructor PointT is called for each object instance before any other
+access routine is called for that object.  The constructor cannot be called on
+an existing object.
+
+\subsubsection* {Access Routine Semantics}
+
+PointT($x, y$):
+\begin{itemize}
+\item transition: $xc, yc := x, y$
+\wss{What should the state transition be for the constructor?}
+\item output: $out := \mathit{self}$
+\item exception: None
+\end{itemize}
+
+\noindent x():
+\begin{itemize}
+\item output: $out := xc$
+\item exception: None
+\end{itemize}
+
+\noindent y():
+\begin{itemize}
+\item output : $out := yc$  \wss{What should go here?}
+\item exception: None
+\end{itemize}
+
+\noindent translate($\Delta x$, $\Delta y$):
+\begin{itemize}
+\item output: $out := PointT(xc + \Delta x, yc + \Delta y)$   \wss{What should go here?}
+\item exception: None \wss{What should go here?}
+\end{itemize}
+
+\newpage
+
+\section* {Line ADT Module}
+
+\subsection*{Template Module}
+
+LineT
+
+\subsection* {Uses}
+\wss{What should go here?}\\
+PointT, MapTypes
+\subsection* {Syntax}
+
+\subsubsection* {Exported Types}
+
+LineT = ?
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+LineT & PointT, CompassT, $\mathbb{N}$ & LineT & invalid\_argument\\
+\hline
+strt & ~ & PointT & ~\\
+\hline
+end & ~ & PointT & ~\\
+\hline
+orient & ~ & CompassT & ~\\
+\hline
+ len & ~ & $\mathbb{Z}$ & ~\\
+\hline
+flip & ~ & LineT & ~\\
+\hline
+rotate & RotateT & LineT & ~\\
+\hline
+translate & $\mathbb{Z}$, $\mathbb{Z}$ & LineT  & ~\\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+$s$: PointT\\
+$o$: CompassT\\
+$L$: $\mathbb{N}$\\ 
+
+\subsubsection* {State Invariant}
+
+None
+
+\subsubsection* {Assumptions}
+
+The constructor LineT is called for each object instance before any other
+access routine is called for that object.  The constructor cannot be called on
+an existing object.
+
+\subsubsection* {Access Routine Semantics}
+
+LineT($st, ornt, l$):
+\begin{itemize}
+\item transition: $s, o, L := st, ornt, l$
+\item output: $out := \mathit{self}$
+\item exception: $exc$ := $(l = 0) \implies$ invalid\_argument\\
+\wss{Write the spec for an exception when the length of the line is 0}
+\end{itemize}
+
+\noindent strt():
+\begin{itemize}
+\item output: $out := \mbox{PointT}(st.x, st.y)$
+\item exception: None
+\end{itemize}
+
+\noindent end():
+\begin{itemize}
+\item output:  $out :=$ $((o = N) \implies s.translate(0, l-1)|$\\
+					  $(o = E) \implies s.translate(l-1, 0)|$\\
+					  $(o = S) \implies s.translate(0, -l+1)|$\\
+				   	  $(o = W) \implies s.translate(-l+1, 0))$\\
+\wss{Write the spec for returning the end point of the line.}
+
+\item exception: None
+\end{itemize}
+
+\noindent orient():
+\begin{itemize}
+\item output: $out := o$
+\item exception: None
+\end{itemize}
+
+\noindent len():
+\begin{itemize}
+\item output: $out := L$
+\item exception: None
+\end{itemize}
+
+\noindent flip():
+\begin{itemize}
+\item output:  $out :=$ $((o = N) \implies LineT(s, S, l)|$\\
+					  $(o = E) \implies LineT(s, W, l)|$\\
+					  $(o = S) \implies LineT(s, N, l)|$\\
+				   	  $(o = W) \implies LineT(s, E, l)|)$\\
+\wss{Write the spec for returning a new line that is the mirror
+    image of the current line.  That is, the start point and length of the new
+    line will remain the same, but the orientation will be changed by 180
+    degrees}
+\item exception: None
+\end{itemize}
+
+\noindent rotate(r):
+\begin{itemize}
+\item output: 
+\begin{tabular}{|p{2.cm}|p{2.3cm}|l|}
+\hhline{~|~|-|}
+\multicolumn{1}{r}{} & \multicolumn{1}{r|}{} & \multicolumn{1}{l|}{$out :=$}\\
+\hhline{|-|-|-|}
+$r = \mbox{CW}$ & $o = \mbox{N}$ & LineT(s, E, L)\wss{?}\\
+\hhline{|~|-|-|}
+~ & $o = \mbox{S}$ & LineT(s, W, L)\wss{?}\\
+\hhline{|~|-|-|}
+~ & $o = \mbox{W}$ & LineT(s, N, L)\wss{?}\\
+\hhline{|~|-|-|}
+~ & $o = \mbox{E}$ & LineT(s, S, L)\wss{?}\\
+\hhline{-|-|-|}
+$r = \mbox{CCW}$ & $o = \mbox{N}$ & LineT(s, W, L)\wss{?}\\
+\hhline{|~|-|-|}
+~ & $o = \mbox{S}$ & LineT(s, E, L)\wss{?}\\
+\hhline{|~|-|-|}
+~ & $o = \mbox{W}$ & LineT(s, S, L)\wss{?}\\
+\hhline{|~|-|-|}
+~ & $o = \mbox{E}$ & LineT(s, N, L)\wss{?}\\
+\hhline{-|-|-|}
+\end{tabular}
+
+\item exception: None
+\end{itemize}
+
+\noindent translate($\Delta x$, $\Delta y$):
+\begin{itemize}
+\item output: $out := LineT(s.translate(\Delta x, \Delta y), o, L)$\\
+\wss{Add the missing spec}
+\item exception: None
+\end{itemize}
+
+\newpage
+
+\section* {Path ADT Module}
+
+\subsection*{Template Module}
+
+PathT
+
+\subsection* {Uses}
+
+PointT, LineT, MapTypes
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Types}
+
+PathT = ?
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+PathT & PointT, CompassT, $\mathbb{N}$ & PathT & \\ %LineT constructor for invalid\_argument
+\hline
+append & CompassT, $\mathbb{N}$ & & invalid\_argument\\ 
+\hline
+strt & ~ & PointT & ~\\
+\hline
+end & ~ & PointT & ~\\
+\hline
+line & $\mathbb{N}$ & LineT & outside\_bounds\\
+\hline
+size & ~ & $\mathbb{N}$ & \\
+\hline
+ len & ~ & $\mathbb{N}$ & ~\\
+\hline
+translate & $\mathbb{Z}$, $\mathbb{Z}$ & LineT  & ~\\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+$s$: sequence of LineT
+
+\subsubsection* {State Invariant}
+
+None
+
+\subsubsection* {Assumptions}
+
+\begin{itemize}
+\item The constructor PathT is called for each object instance before any other
+access routine is called for that object.  The constructor cannot be called on
+an existing object.
+%\item Appends will not be made while iterating through the list of lines.
+\end{itemize}
+
+\subsubsection* {Access Routine Semantics}
+
+PathT($st, ornt, l$):
+\begin{itemize}
+\item transition: $s := s||<LineT(st,ornt, l)>$\wss{What is the spec to add the first element to the sequence
+  of LineT?}
+\item output: $out := \mathit{self}$
+\item exception: None
+\end{itemize}
+
+\noindent append($ornt, l$):
+\begin{itemize}
+\item transition: $s :=$ $s||< newLine:$LineT$(s.$adjPt$(ornt), ornt, l)>$\\
+\wss{What is the missing specification?  The appended line
+    starts at a point adjacent to the end point of the previous line in the
+    direction $ornt$.  The lines are not allowed to
+    overlap.}
+\item exception: $exc := \lnot(\forall(i\in [0..|s|-1],j \in [0..|pointsInLine(s[i])|]$ $|$ $pointsInLine(s[i])[j] \neq pointsInLine(newLine)[j])) \implies$ invalid\_argument\\
+\wss{What is the specification for the exception?  An exception
+    should be generated if the introduced line overlaps with any of the previous
+    points in the existing path.}
+\end{itemize}
+
+\noindent strt():
+\begin{itemize}
+\item output: $out := s[0].strt()$\\
+\wss{What is the missing spec?}
+\item exception: None
+\end{itemize}
+
+\noindent end():
+\begin{itemize}
+\item output: $out := s[|s|-1].end()$\\
+\wss{What is the missing spec?}
+\item exception: None
+\end{itemize}
+
+\noindent line($i$):
+\begin{itemize}
+\item output: $out := s[i]$\\
+\wss{Returns the ith line in the sequence.  What is the missing spec?}
+\item exception: \wss{Generate the exception if the index is not in the sequence.}
+\end{itemize}
+
+\noindent size:
+\begin{itemize}
+\item output: $out:=|s|$\\
+\wss{Output the number of lines in the path.}
+\item exception: None
+\end{itemize}
+
+\noindent len:
+\begin{itemize}
+\item output: $out$:= $\sum s[i]$.len() : $i = [0..|s| - 1]$\\
+\wss{Output the number of points on the line.}
+\item exception: None
+\end{itemize}
+
+\noindent translate($\Delta x$, $\Delta y$):
+\begin{itemize}
+\item output: Create a new PathT object with state variable $s'$ such that:
+$$\forall(i: \mathbb{N} | i \in [0..|s|-1] : s'[i] = s[i].\mbox{translate}(\Delta x, \Delta y))$$
+\item exception: None
+\end{itemize}
+
+\subsection*{Local Functions}
+
+pointsInLine: $\mbox{LineT} \rightarrow \mbox{(set of PointT)}$\\
+
+\noindent pointsInLine ($l$) 
+\begin{multline*}
+\equiv \{ i: \mathbb{N} | i \in [0
+  .. (l.\mbox{len} - 1)] : l.\mbox{strt}.\mbox{translate}(\\l.orient() = N \implies 0, i|\\
+  l.orient() = E \implies i, 0|\\
+  l.orient() = S \implies 0, -i|\\
+  l.orient() = W \implies -i, 0)\}\\
+\end{multline*} (\wss{Complete the spec.}
+
+\noindent adjPt: $\mbox{CompassT} \rightarrow \mbox{PointT}$\\
+adjPt$(ornt) \equiv$
+
+\medskip
+
+\begin{tabular}{|l|l|}
+\hline
+$ornt = \mbox{N}$ & $s[|s|-1].\mbox{end}.\mbox{translate}(0,1)\wss{?}$\\
+\hline
+$ornt = \mbox{S}$ & $s[|s|-1].\mbox{end}.\mbox{translate}(0,-1)\wss{?}$\\
+\hline
+$ornt = \mbox{W}$ & $s[|s|-1].\mbox{end}.\mbox{translate}(-1,0)\wss{?}$\\
+\hline
+$ornt = \mbox{E}$ & $s[|s|-1].\mbox{end}.\mbox{translate}(1,0)\wss{?}$\\
+\hline
+\end{tabular}
+
+\newpage
+
+\section* {Generic Seq2D Module}
+
+\subsection* {Generic Template Module}
+
+Seq2D(T)
+
+\subsection* {Uses}
+
+N/A
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Types}
+
+Seq2D(T) = ?
+
+\subsubsection* {Exported Constants}
+
+None
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | p{5cm} |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+Seq2D & seq of (seq of T), $\mathbb{R}$ & Seq2D & invalid\_argument\\
+\hline
+set & PointT, T & ~ & outside\_bounds\\
+\hline
+get & PointT & T & outside\_bounds\\
+\hline
+getNumRow & ~ & $\mathbb{N}$ & \\
+\hline
+getNumCol & ~ & $\mathbb{N}$ & \\
+\hline
+getScale & ~ & $\mathbb{R}$ & \\
+\hline
+count & T & $\mathbb{N}$ & \\
+\hline
+count & LineT, T & $\mathbb{N}$ & invalid\_argument\\
+\hline
+count & PathT, T & $\mathbb{N}$ & invalid\_argument\\
+\hline
+length & PathT & $\mathbb{R}$ & invalid\_argument\\
+\hline
+connected & PointT, PointT & $\mathbb{B}$ & invalid\_argument\\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+$s$: seq of (seq of T)\\
+scale: $\mathbb{R}$\\
+nRow: $\mathbb{N}$\\
+nCol: $\mathbb{N}$
+
+\subsubsection* {State Invariant}
+
+None
+
+\subsubsection* {Assumptions}
+
+\begin{itemize}
+\item The Seq2D(T) constructor is called for each object instance before any
+other access routine is called for that object.  The constructor can only be
+called once.
+\item Assume that the input to the constructor is a sequence of rows, where each
+  row is a sequence of elements of type T.  The number of columns (number of
+  elements) in each row is assumed to be equal. That is each row
+  of the grid has the same number of entries.  $s[i][j]$ means the ith row and
+  the jth column.  The 0th row is at the bottom of the map and the 0th column
+  is at the leftmost side of the map.
+\end{itemize}
+
+\subsubsection* {Access Routine Semantics}
+
+Seq2D($S$, scl):
+\begin{itemize}
+\item transition: $s, scale, nRow, nCol := S, scl, |S|, |S|$\\
+\wss{Fill in the transition.}
+\item output: $\mathit{out} := \mathit{self}$
+\item exception: $exc := ((scl < 0$ $|$ $(|S| = 0)$ $|$ $(|S[0]| = 0)$ $|$\\ $\lnot(\forall(i:\mathbb{N}|i\in[1..|S|-1]: |S[i]| = |S[0]|)) \implies$ invalid\_argument)\\
+\wss{Fill in the exception.  One should be generated if the
+    scale is less than zero, or the input sequence is empty, or the number of
+    columns is zero in the first row, or the number of columns in any row is
+    different from the number of columns in the first row.}
+\end{itemize}
+
+\noindent set($p, v$):
+\begin{itemize}
+\item transition: $S[p.x()][p.y()]$ := $v$\\
+\wss{Sets point $p$ to element $v$.}
+\item exception: $exc := (\lnot(0 \leq p.x() < nRow)$ $|$ $\lnot(0 \leq p.y() < nCol)\\ \implies$ outside\_bounds)\\
+\wss{Generate an exception if the point lies outside of the
+    map.}
+\end{itemize}
+
+\noindent get($p$):
+\begin{itemize}
+\item output: $out := S[p.x()][p.y()]$
+\wss{?}
+\item exception: $exc := (\lnot(0 \leq p.x() < nRow)$ $|$ $\lnot(0 \leq p.y() < nCol)\\ \implies$ outside\_bounds)\\
+\wss{Generate an exception if the point lies outside of the
+    map.}
+\end{itemize}
+
+\noindent getNumRow():
+\begin{itemize}
+\item output: $out := \mbox{nRow}$
+\item exception: None
+\end{itemize}
+
+\noindent getNumCol():
+\begin{itemize}
+\item output: $out := \mbox{nCol}$
+\item exception: None
+\end{itemize}
+
+\noindent getScale():
+\begin{itemize}
+\item output: $out := \mbox{scale}$
+\item exception: None
+\end{itemize}
+
+\noindent count($t$: T):
+\begin{itemize}
+\item output: $out :=$ +$(i,j:\mathbb{N}|i,j\in[0..|S| - 1]|S[i],[j] = t:1)$\\
+\wss{Count the number of times the value $t$ occurs in the 2D
+    sequence.}
+\item exception: None
+\end{itemize}
+
+\noindent count($l$: LineT, $t$: T):
+\begin{itemize}
+\item output: $out :=$ +$(i,j:\mathbb{N}|i\in[l.strt.x()..l.end.x()],j\in[l.strt.y()..l,end.y()]|S[i],[j] = t:1)$\\
+\wss{Count the number of times the value $t$ occurs in the line
+    $l$.}
+\item exception: $exc := (\lnot(0 \leq l.strt.x() < nRow)$ $|$ $\lnot(0 \leq l.strt.y() < nCol)|\lnot(0 \leq l.end.x() < nRow)$ $|$ $\lnot(0 \leq l.end.y() < nCol) \implies$ invalid\_argument)\\
+\wss{Exception if any point on the line lies off of the 2D
+    sequence (map)}
+\end{itemize}
+
+\noindent count($\mathit{pth}$: PathT, $t$: T):
+\begin{itemize}
+\item output: $out :=$ +($i:\mathbb{N}|i\in[0..|pth|-1]:$count($pth$.line(i), $t$))\\
+\wss{Count the number of times the value $t$ occurs in the path
+    $pth$.}
+\item exception: $exc := \forall(i:\mathbb{N}|i\in[0..|pth|-1] \bullet \\\lnot(0 \leq pth.line(i).strt.x() < nRow)$ $|$ \\$\lnot(0 \leq pth.line(i).strt.y() < nCol)$ $|$ \\$\lnot(0 \leq pth.line(i).end.x() < nRow)$ $|$ \\$\lnot(0 \leq pth.line(i).end.y() < nCol) \implies$ invalid\_argument)\\
+\wss{Exception if any point on the path lies off of the 2D
+    sequence (map)}
+\end{itemize}
+
+\noindent length($\mathit{pth}$: PathT):
+\begin{itemize}
+\item output: $out := +(i:\mathbb{N}|i\in[0..|pth|-1]:pth.line(i).len())*scale$\\
+\wss{Use the scale to find the length of the
+    path.}
+\item exception: $exc := \forall(i:\mathbb{N}|i\in[0..|pth|-1] \bullet \\\lnot(0 \leq pth.line(i).strt.x() < nRow)$ $|$ \\$\lnot(0 \leq pth.line(i).strt.y() < nCol)$ $|$ \\$\lnot(0 \leq pth.line(i).end.x() < nRow)$ $|$ \\$\lnot(0 \leq pth.line(i).end.y() < nCol) \implies$ invalid\_argument)\\
+\wss{Exception if any point on the path lies off of the 2D
+    sequence (map)}
+\end{itemize}
+
+\noindent connected($p_1$: PointT, $p_2$: PointT):
+\begin{itemize}
+\item output: \wss{Return true if a path exists between $p_1$ and $p_2$ with all
+    of the points on the path being of the same value.}
+\item exception: \wss{Return an exception if either of the input points is not
+    valid.}
+
+\end{itemize}
+
+\subsection*{Local Functions}
+
+\noindent validRow: $\mathbb{N} \rightarrow \mathbb{B}$\\
+\noindent validRow($i : \mathbb{N}$)
+$\equiv 0 \leq i < nRow \implies True$\\
+\wss{returns true if the given natural number is a valid row
+  number.}\\
+
+\noindent validCol: $\mathbb{N} \rightarrow \mathbb{B}$\\
+\noindent validCol($j : \mathbb{N}$)
+$\equiv 0 \leq j < nCol \implies True$\\
+\noindent \wss{returns true if the given natural number is a valid column
+  number.}\\
+
+\noindent validPoint: $\mbox{PointT} \rightarrow \mathbb{B}$\\
+\noindent validRow($p : \mathbb{N}$)
+$\equiv (0 \leq p.x() < nRow) \land (0 \leq p.y() < nCol)\implies True$\\
+\noindent \wss{Returns true if the given point lies within the boundaries of the
+  map.}\\
+
+\noindent validLine: $\mbox{LineT} \rightarrow \mathbb{B}$\\
+\noindent validLine($l:LineT$)\\
+\begin{multline*}
+\equiv ((0 \leq l.strt.x() < nRow) \land (0 \leq l.strt.y() < nCol) \land \\ (0 \leq l.end.x() < nRow) \land (0 \leq l.end.y() < nCol) \implies True)\\
+\end{multline*}
+\wss{Returns true if all of the points for the given line lie within the boundaries of the
+  map.}\\
+
+\noindent validPath: $\mbox{PathT} \rightarrow \mathbb{B}$\\
+\noindent validPath($pth:PathT$)\\
+\begin{multline*}
+\equiv \forall(i:\mathbb{N}|i\in[0..|pth|-1] \bullet \\(0 \leq pth.line(i).strt.x() < nRow) \land \\ (0 \leq pth.line(i).strt.y() < nCol) \land \\(0 \leq pth.line(i).end.x() < nRow) \land \\ (0 \leq pth.line(i).end.y() < nCol) \implies True)\\
+\end{multline*}
+\wss{Returns true if all of the points for the given path lie within the boundaries of the
+  map.}\\
+
+\noindent pointsInLine: $\mbox{LineT} \rightarrow \mbox{(set of PointT)}$\\
+\noindent pointsInLine ($l$) 
+\begin{multline*}
+\equiv \{ i: \mathbb{N} | i \in [0
+  .. (l.\mbox{len} - 1)] : l.\mbox{strt}.\mbox{translate}(\\l.orient() = N \implies 0, i|\\
+  l.orient() = E \implies i, 0|\\
+  l.orient() = S \implies 0, -i|\\
+  l.orient() = W \implies -i, 0)\}\\
+\end{multline*}
+\wss{The same local function as given in the Path module.}
+
+\noindent pointsInPath: $\mbox{PathT} \rightarrow \mbox{(set of PointT)}$\\
+\noindent pointsInPath($p$)\\
+\indent $\equiv$ \{$i : \mathbb{N}|i\in[0..|p|-1]: pointsInLine(p.line(i))$\}\\
+\wss{Return the set of points that make up the input path.}
+
+\newpage
+
+\section* {LanduseMap Module}
+
+\subsection* {Template Module}
+
+LanduseMapT is Seq2D(LanduseT)
+
+\section* {DEM Module}
+
+\subsection* {Template Module}
+
+DEMT is Seq2D($\mathbb{Z}$)
+
+\newpage
+
+\section*{Critique of Design}
+
+Write a critique of the interface for the modules in this project.  Is there
+anything missing?  Is there anything you would consider changing?  Why?
+
+\end {document}\grid

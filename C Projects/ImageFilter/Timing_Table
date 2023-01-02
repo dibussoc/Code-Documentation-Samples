@@ -1,0 +1,12 @@
+                CPU time
+run      reading     processing     writing
+
+ein3A    3.2e-02     1.6e-02        3.2e-02
+
+ein11A   2.8e-02     2.0e-01        4.0e-02
+
+ein5M    2.8e-02     3.8e-01        2.4e-02
+
+lux11A   1.9e+00     9.7e+00        1.6e+00
+
+lux11M   1.8e+00     2.7e+02        1.6e+00
