@@ -1,0 +1,61 @@
+BLOCKBUILDER INSTALLATION
+
+
+***
+To user BlockBuilder, users must have python3 and pyglet installed on their system.
+If you already have python3 and pyglet, follow howToRun.txt in this directory and follow
+the instructions to run BlockBuilder. If you run BlockBuilder and receive no errors, this 
+means you have Python3 and pyglet installed on your system. If you receive any errors upon 
+running BlockBuilder, you have do not have python3 or pyglet installed, so follow these 
+instructions.
+***
+
+------------------------------
+----How to Install Python3----
+------------------------------
+
+Mac OS
+
+	1. Open a terminal session.
+	2. Run the command "brew install python3".
+	3. Follow prompts on the terminal.
+
+Windows
+
+	1. Visit https://www.python.org/downloads/ and download the latest version of python3 and IDLE.
+
+
+-----------------------------
+----How to Install pyglet----
+-----------------------------
+
+Mac OS
+
+	1. Open a terminal session.
+	2. Run the command "pip3 install pyglet" (pip3 should install when you install python3).
+	3. Follow prompts on the terminal.
+
+Windows
+	1. Open command prompt.
+	2. Run the command "pip3 install pyglet" (pip3 should install when you install python3).
+	3. Follow prompts on the command prompt.
+
+
+-------------------------------------------
+----How to Uninstall python3 and pyglet----
+-------------------------------------------
+
+Max OS
+	1. Open a terminal session.
+	2. Run the command "brew uninstall python3" (this command will also uninstall pyglet).
+	3. Follow prompts on terminal.
+
+Windows
+	1. Follow the standard procedure of uninstalling programs on Windows.
+	2. Uninstall python3 and IDLE (pyglet will also uninstall).
+
+
+
+
+SE3XB3 2018
+OAC

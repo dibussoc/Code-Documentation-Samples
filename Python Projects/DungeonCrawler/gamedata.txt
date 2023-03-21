@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+jl,2,grass,water,fire
+jn,0
+ds,0
+sds,0
+wee,0
+wdwd,0
+ded,0
+dsd,0
+sd,1,grass,shield
+=======
+afs,
+Dan,2,shield
+>>>>>>> Removing enemies when starting from save
+Dansd,0
+FGRz,0
+asdf,2,water
+sdgs,2,water
+fefsaf,2,grass
