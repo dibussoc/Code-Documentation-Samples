@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="Stylesheets/DirStyles.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Angler's Corner - Fish </title>
+
+<script src="javascripts/myScript.js"></script>
+</head>
+
+<body onload="openTab(event, 'Fresh Water')">
+  <div class="fishBG"> </div>
+
+  <div class="Header" class="MainTitle">
+    <a href="homePage.html" class="MainTitle">
+      <img src="images/cartoonFish.png" width="75" height="75" alt="Image of a fish"></img> The Great Fishing Directory
+    </a>
+
+    <div class="navbar">
+      <a href="homePage.html"> <i> Home and News </i> </a>
+      <a href="FishDirectory.html" class="active"> <i> Fish Directory </i></a>
+      <a href="GearDirectory.html"> <i> Gear and Equipment Directory </i></a>
+    </div>
+  </div>
+
+  <div class="fishContent">
+    <h1 class="spacyTitle"> Choose a Fish You'd Like to Fish For! </h1>
+    <!-- Tab links -->
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'Fresh Water')">Fresh Water</button>
+      <button class="tablinks" onclick="openTab(event, 'Salt Water')">Salt Water</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="Fresh Water" class="tabcontent">
+
+      <figure class="tabFigs">
+        <!-- Taken from https://uwotf.com/event/wisconsin-uwotf-womens-musky-works-full/ -->
+        <img src="https://content.osgnetworks.tv/gameandfishing/content/photos/gaf-12Punch-SMB.jpg" width="400" height="200" class="tabPics" />
+        <figcaption> Smallmouth Bass, a common game fish found in many moderate climate rivers. </figcaption>
+      </figure>
+
+      <figure class="tabFigs">
+        <!--Taken from https://uwotf.com/event/wisconsin-uwotf-womens-musky-works-full/ -->
+        <img src="https://uwotf.com/wp-content/uploads/2019/05/UWOTF-Womens-Musky-Works-2.jpg" width="400" height="200" class="tabPics" />
+        <figcaption> Canadian Musky, known as the fish of a Thousand Casts and a sought after Trophy Fish. </figcaption>
+      </figure>
+
+      <h2>Fresh Water</h2>
+      <h3> Game Fish </h3>
+        <ul>
+          <li><a href="fishPages/bass.html"> Bass </a> </li>
+          <li>Pike</li>
+          <li>Pickerel</li>
+        </ul>
+
+      <h3> Bottom-Feeders </h3>
+        <ul>
+          <li>Catfish</li>
+          <li>Carp</li>
+          <li>Channel Cat</li>
+        </ul>
+
+      <h3> Quality Meal Fish </h3>
+        <ul>
+          <li>Perch</li>
+          <li>Lake Trout</li>
+          <li>Salmon</li>
+          <li> <a href="fishPages/pickerel.html"> Pickerel </a> </li>
+        </ul>
+
+      <h3> Trophy Fish </h3>
+        <ul>
+          <li>Musky</li>
+          <li>Rainbow Trout</li>
+          <li>Brown Trout</li>
+        </ul>
+    </div>
+
+
+    <div id="Salt Water" class="tabcontent">
+
+      <figure class="tabFigs">
+        <!--Taken from https://uwotf.com/event/wisconsin-uwotf-womens-musky-works-full/ -->
+        <img src="https://uwotf.com/wp-content/uploads/2019/05/UWOTF-Womens-Musky-Works-2.jpg" width="400" height="200" class="tabPics" />
+        <figcaption> Canadian Musky, known as the fish of a Thousand Casts and a sought after Trophy Fish. </figcaption>
+      </figure>
+
+      <h2>Salt Water</h2>
+      <h3> Deep Sea Fish </h3>
+        <ul>
+          <li>Shark</li>
+          <li>Grouper</li>
+          <li>Halibut</li>
+        </ul>
+
+      <h3> Shallow Predators </h3>
+        <ul>
+          <li>Barracuda</li>
+          <li>Bluefish</li>
+        </ul>
+
+      <h3> Quality Meal Fish </h3>
+        <ul>
+          <li>Atlantic Cod</li>
+          <li>Tilapia</li>
+          <li>Yellowfin Tuna</li>
+        </ul>
+    </div>
+
+    <h2> Additional Notes </h2>
+    <p>
+      It should be noted that the above fish are sorted by Fresh Water and Salt Water fishing, however
+    there have been known to be many cases of certain fish migrating from salt water to also exist
+    in fresh water. The List aboves displays by natural habitat, where one would most likely fish for
+    that species.
+    </p>
+
+    <h2> COURSE DISCLAIMER </h2>
+    <p style="font-style:oblique;">
+      It should be noted that this page is placeholder content based on my own knowledge for the sake of the COMP 266 course.
+      For the actual website to be viewed by others more content would be added of course. Not all pages will exist as of now.
+    </p>
+  </div>
+
+  <div class="footer">
+    <h4> Last Modification </h4>
+    <p> <font size="-2"> Chris DiBussolo, 01/13/2020 </font> </p>
+  </div>
+</body>
+</html>

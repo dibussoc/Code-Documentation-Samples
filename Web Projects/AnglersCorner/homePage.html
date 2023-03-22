@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<link rel="stylesheet" href="Stylesheets/DirStyles.css" />
+
+<title> Angler's Corner </title>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="javascripts/myScript.js"></script>
+</head>
+
+<body onload="display(0)">
+  <div class="homeBG"> </div>
+
+    <div class="Header">
+      <a href="homePage.html" class="MainTitle">
+        <img src="images/cartoonFish.png" width="75" height="75" alt="Image of a fish"></img> Welcome to the Angler's Corner
+      </a>
+      <a> , Everything Fishing </a>
+
+      <div class="navbar">
+        <a href="homePage.html" class="active"> <i> Home and News </i> </a>
+        <a href="FishDirectory.html" class="fishLink"> <i> Fish Directory </i></a>
+        <a href="GearDirectory.html" class="gearLink"> <i> Gear and Equipment Directory </i></a>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <h2> Front Page News and Links </h2>
+
+      <!--All images are taken from the links provided in the source and are not my own-->
+      <div class="slideshow">
+
+          <div class="slides" class="active">
+            <a href="fishPages/pickerel.html">
+              <img class="slidePic" src="images/pickerel.jpg" alt="Image of a Pickerel"></img>
+              <div class="slideCaptionBG">
+                <div class="captionText"> Pickerel/Walleye - Great for Eating! </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="slides">
+            <a href="fishPages/bass.html">
+              <img class="slidePic" src="https://media.istockphoto.com/photos/smallmouth-bass-swimming-in-the-stlawrence-river-picture-id873978454?k=6&m=873978454&s=612x612&w=0&h=UUQqJaIoVPnoxiM80PmrCvZhmyCuU726pBzNEcAo3OY=" alt="Image of a Bass"></img>
+              <div class="slideCaptionBG">
+                <div class="captionText"> Bass - Great for Fighting!</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="slides">
+            <a href="https://www.amazon.ca/Shimano-Stradic-Spinning-Fishing-STCI41000HGFB/dp/B01H3SFHTU/ref=sr_1_1?gclid=CjwKCAiApOvwBRBUEiwAcZGdGLKfSpW8blUn2vPf78V3N6B6dcZhnyFk4RwpwWK7WLIVvjMbH7EFehoCxikQAvD_BwE&hvadid=267127070316&hvdev=c&hvlocphy=1002435&hvnetw=g&hvpos=1t1&hvqmt=b&hvrand=4576402234329036103&hvtargid=aud-854548931220%3Akwd-298070893827&hydadcr=29172_11354891&keywords=shimano+stradic+ci4+1000&qid=1578873705&sr=8-1">
+              <img class="slidePic" src="https://cdn.shopify.com/s/files/1/0260/2835/products/maxresdefault.jpg?v=1571438939" alt="Image of a Shimano Stradic Ci4+"></img>
+              <div class="captionText"> The Highlight Reels - Shimano Stradic Ci4+ </div>
+            </a>
+          </div>
+
+          <div class="slides">
+            <a href="https://www.mepps.com/information/aglia-dressed-aglia/121#B3%20G">
+              <img class="slidePic" src="https://www.gerrysfishing.com/img/product/mepps-aglia-fluo-firetiger-3-18007809-600.jpg" alt="Image of a Mepps Aglia #3"></img>
+              <div class="captionText"> Lure of the Month - Mepps Aglia #3 </div>
+            </a>
+          </div>
+
+          <a class="back" onclick="changeSlide(-1)">&#10094;</a>
+          <a class="forward" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+          <span class="dot" onclick="goToSlide(0)"></span>
+          <span class="dot" onclick="goToSlide(1)"></span>
+          <span class="dot" onclick="goToSlide(2)"></span>
+          <span class="dot" onclick="goToSlide(3)"></span>
+        </div>
+
+      <h2> Try a Fishing Quiz </h2>
+      <p> Don't like reading? Try learning some things by taking a quiz! </p>
+
+      <div>
+        <!-- Quiz photo taken from below link -->
+        <a href="quizGame.html"> <img class="quizPic" src="https://yow.ca/sites/yow.ca/files/site-specific/quiz-1.png" alt="Take a Fishing Quiz to test your Knowledge" ></img> </a>
+        <a href="quizGame2.html"> <img class="quizPic2" src="https://images-na.ssl-images-amazon.com/images/I/51Pu7AVcQUL.png" alt="Take a Fishing Quiz to test your Knowledge" ></img> </a>
+      </div>
+
+      <hr />
+      <h2> Latest Fishing News </h2>
+      <!-- This code was taken from the Twitter API at https://publish.twitter.com/?maxheight=800&maxwidth=1200&query=https%3A%2F%2Ftwitter.com%2Fyourfishingnews&theme=dark&widget=Timeline-->
+      <div id="container">
+        <a class="twitter-timeline" data-width="1200" data-height="800" data-theme="dark" href="https://twitter.com/YourFishingNews?ref_src=twsrc%5Etfw">Tweets by YourFishingNews</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+
+      <h4> Notice </h4>
+      If the Twitter news feed is not loading please disable your adblocker, this should fix the issue.
+
+    </div>
+
+    <div class="footer">
+
+      <!--Taken from https://widgetpack.com/admin#/site/22771/menu/site/submenu/install-->
+      <div id="wpac-comment"></div>
+      <script type="text/javascript" src="javascripts/comments.js"></script>
+      <a href="https://widgetpack.com" class="wpac-cr">Comments System WIDGET PACK</a>
+
+      <h4> Last Modification </h4>
+      <p> <font size="-2"> Chris DiBussolo, 01/13/2020 </font> </p>
+    </div>
+
+</body>
+</html>

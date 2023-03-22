@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<link rel="stylesheet" href="Stylesheets/DirStyles.css" />
+
+
+<title> Angler's Corner </title>
+
+</head>
+
+<body onload="displayQuiz(questions, quizHTML, resultsHTML, submitButton);">
+  <div class="homeBG"> </div>
+
+    <div class="Header">
+      <a href="homePage.html" class="MainTitle">
+        <img src="images/cartoonFish.png" width="75" height="75" alt="Image of a fish"></img> Welcome to the Angler's Corner
+      </a>
+      <a> , Everything Fishing </a>
+
+      <div class="navbar">
+        <a href="homePage.html" class="active"> <i> Home and News </i> </a>
+        <a href="FishDirectory.html" class="fishLink"> <i> Fish Directory </i></a>
+        <a href="GearDirectory.html" class="gearLink"> <i> Gear and Equipment Directory </i></a>
+      </div>
+    </div>
+
+    <div class="quizContent">
+
+      <h2 style="font-style:oblique"> Fish Quiz! </h2>
+      <div id="quiz"></div>
+      <button id="submit">Show Mark</button>
+      <div id="results"></div>
+
+    </div>
+
+    <div class="footer">
+      <!--Taken from https://widgetpack.com/admin#/site/22771/menu/site/submenu/install-->
+      <div id="wpac-comment"></div>
+      <script type="text/javascript" src="javascripts/comments.js"></script>
+      <a href="https://widgetpack.com" class="wpac-cr">Comments System WIDGET PACK</a>
+      
+      <h4> Last Modification </h4>
+      <p> <font size="-2"> Chris DiBussolo, 01/13/2020 </font> </p>
+    </div>
+
+    <script type="text/javascript" src="javascripts/quizScript.js"></script>
+
+</body>
+</html>
