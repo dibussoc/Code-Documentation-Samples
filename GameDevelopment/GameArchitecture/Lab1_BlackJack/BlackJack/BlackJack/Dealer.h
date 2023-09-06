@@ -7,5 +7,10 @@ class Dealer
 {
 private:
 	vector<Card> Deck;
+
+public:
+	Card dealCard() {
+
+	}
 };
 
