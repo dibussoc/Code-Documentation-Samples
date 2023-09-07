@@ -24,6 +24,9 @@
     <ClInclude Include="Dealer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="gameController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Card.cpp">
@@ -33,6 +36,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Dealer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gameController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

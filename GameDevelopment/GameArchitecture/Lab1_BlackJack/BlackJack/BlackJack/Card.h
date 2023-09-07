@@ -1,6 +1,7 @@
 #pragma once
 using namespace std;
 #include <string>;
+#include <unordered_map>
 
 class Card
 {
@@ -23,6 +24,9 @@ public:
 	//Accessor for the suit of the card
 	//Will be used to display what card you picked.
 	string Suit();
+
+	//Card method to print the name of a card. Cards are assigned values from 0-13, but we need to say Jack, Queen, etc.
+	string cardName();
 
 };
 

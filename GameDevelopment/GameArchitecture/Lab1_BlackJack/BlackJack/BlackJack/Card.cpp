@@ -2,15 +2,10 @@
 using namespace std;
 #include <string>;
 
-
-//Numeric value on the card
-int value;
-
-//Suit of the card
-string suit;
 Card::Card()
 {
-	this->value
+	this->suit = "";
+	this->value = -1;
 }
 
 Card::Card(int numVal, string suitVal)
@@ -28,4 +23,18 @@ int Card::Value() {
 //Will be used to display what card you picked.
 string Card::Suit() {
 	return this->suit;
+}
+
+string Card::cardName()
+{
+	unordered_map<int, string> cardValues = {
+	{1, "Ace"}, {11, "Jack"},{12, "Queen"},{13, "King"},
+	};
+
+	if (cardValues.count(this->value) > 0) {
+		return cardValues[this->value] + " of " + this->suit;
+	}
+	else {
+		return to_string(this->value) + " of " + this->suit;
+	}
 }

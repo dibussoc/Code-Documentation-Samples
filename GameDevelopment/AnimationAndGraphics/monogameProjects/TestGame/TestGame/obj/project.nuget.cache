@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "bU50j2czBajOScs9tSK+iXwtrumXwDfMKAacv2c8WSSKfdhLhGnSZdRVjxHy4cP1cBfwNCVddn6KfG+TJM4t6A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dibussol\\Desktop\\ChrisSchool\\Code-Documentation-Samples\\GameDevelopment\\AnimationAndGraphics\\monogameProjects\\TestGame\\TestGame\\TestGame.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dibussol\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\dibussol\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+  ],
+  "logs": []
+}
