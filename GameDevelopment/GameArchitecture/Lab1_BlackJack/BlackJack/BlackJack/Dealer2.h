@@ -4,13 +4,20 @@ using namespace std;
 #include "Card.h"
 #include "Player.h"
 
+
+/*
+I should have made player the base class of dealer!
+*/
 class Dealer
 {
 private:
 	vector<Card> deck;
 
-	//
+	//Dealers hand of cards
 	vector<Card> hand;
+
+	//Value of the dealers hand
+	int dealerTotal;
 
 	//Tracking variable to keep track of what card was dealed last.
 	Card lastDealed;
@@ -32,6 +39,9 @@ public:
 	bool checkWin(Player player);
 
 	//Makes the dealer deal to himself until he either beats the player or goes over 21.
-	void dealSelf(Player player);
+	void finishDealing(Player player);
+
+	//Metod to st
+	void startHands();
 };
 

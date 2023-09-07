@@ -42,6 +42,7 @@ void Dealer::dealCard(Player player)
 {
 	Card dealtCard = this->deck.back();
 	this->deck.pop_back();
+	player
 	return;
 }
 
@@ -61,6 +62,14 @@ bool Dealer::checkWin(Player player)
 	}
 }
 
-void Dealer::dealSelf(Player player)
+void Dealer::finishDealing(Player player)
 {
+	while (this->dealerTotal < player.getTotal()) {
+		Card dealtCard = this->deck.back();
+		this->deck.pop_back();
+		this->hand.push_back(dealtCard);
+	}
 }
+
+void Dealer::startHands(){
+};
