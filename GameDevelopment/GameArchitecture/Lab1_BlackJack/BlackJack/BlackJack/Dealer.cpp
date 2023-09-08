@@ -79,10 +79,10 @@ void Dealer::dealSelfHidden()
 
 void Dealer::revealHiddenCard()
 {
-	cout << "The hidden card was the " + this->hiddenCard.cardName();
+	cout << "The hidden card was the " + this->hiddenCard.cardName() + "\n\n";
 	this->receiveCard(this->hiddenCard);
 	this->addTotal(this->hiddenCard);
-	this->announceDeal(this->hiddenCard, this->getTotal(), "Dealer");
+	cout << "Dealer's new total is: " + to_string(this->getTotal()) + "!\n\n";
 }
 
 
@@ -99,11 +99,10 @@ void Dealer::finishDealing(Player player)
 		dealSelf();
 		if (this->getTotal() > 21) {
 			cout << "You Win!\n";
-		}
-		else if (this->getTotal() > player.getTotal()) {
-			cout << "You Lose!\n";
+			return;
 		}
 	}
+	cout << "You Lose! The Dealer beat you!\n";
 }
 
 
