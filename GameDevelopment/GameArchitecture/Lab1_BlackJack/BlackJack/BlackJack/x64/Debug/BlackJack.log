@@ -1,0 +1,10 @@
+﻿  Dealer.cpp
+C:\Users\Dibus\Desktop\MyGitHub\Code-Documentation-Samples\GameDevelopment\GameArchitecture\Lab1_BlackJack\BlackJack\BlackJack\Player.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Dibus\Desktop\MyGitHub\Code-Documentation-Samples\GameDevelopment\GameArchitecture\Lab1_BlackJack\BlackJack\BlackJack\Player.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Dibus\Desktop\MyGitHub\Code-Documentation-Samples\GameDevelopment\GameArchitecture\Lab1_BlackJack\BlackJack\BlackJack\card.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Dibus\Desktop\MyGitHub\Code-Documentation-Samples\GameDevelopment\GameArchitecture\Lab1_BlackJack\BlackJack\BlackJack\Dealer.cpp(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Dibus\Desktop\MyGitHub\Code-Documentation-Samples\GameDevelopment\GameArchitecture\Lab1_BlackJack\BlackJack\BlackJack\Dealer.cpp(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Dibus\Desktop\MyGitHub\Code-Documentation-Samples\GameDevelopment\GameArchitecture\Lab1_BlackJack\BlackJack\BlackJack\Dealer.cpp(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Dibus\Desktop\MyGitHub\Code-Documentation-Samples\GameDevelopment\GameArchitecture\Lab1_BlackJack\BlackJack\BlackJack\Dealer.cpp(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Dibus\Desktop\MyGitHub\Code-Documentation-Samples\GameDevelopment\GameArchitecture\Lab1_BlackJack\BlackJack\BlackJack\Dealer.cpp(141): warning C4715: 'Dealer::checkWin': not all control paths return a value
+  BlackJack.vcxproj -> C:\Users\Dibus\Desktop\MyGitHub\Code-Documentation-Samples\GameDevelopment\GameArchitecture\Lab1_BlackJack\BlackJack\x64\Debug\BlackJack.exe

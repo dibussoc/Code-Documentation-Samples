@@ -1,11 +1,12 @@
 #pragma once
+
 #include <vector>;
 #include "card.h";
 
 class Player
 {
 private:
-	int cardTotal;
+	int playerTotal;
 
 	vector<Card> hand;
 
@@ -18,5 +19,8 @@ public:
 
 	//method to add a card to the current total
 	void addTotal(Card card);
+
+	//Method to receive a card
+	void receiveCard(Card dealtCard);
 };
 

@@ -8,7 +8,7 @@ using namespace std;
 /*
 I should have made player the base class of dealer!
 */
-class Dealer
+class Dealer2
 {
 private:
 	vector<Card> deck;

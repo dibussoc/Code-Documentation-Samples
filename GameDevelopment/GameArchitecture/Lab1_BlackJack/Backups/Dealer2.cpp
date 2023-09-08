@@ -5,7 +5,7 @@ using namespace std;
 #include <random>;
 #include <iostream>
 
-Dealer::Dealer()
+Dealer::Dealer2()
 {
 }
 
