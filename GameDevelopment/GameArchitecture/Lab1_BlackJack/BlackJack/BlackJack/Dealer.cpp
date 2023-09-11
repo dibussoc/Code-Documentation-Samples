@@ -193,6 +193,8 @@ int main(){
 
 	newDealer.beckonPlayer();
 	response = Dealer::getUserInput();
+	newDealer.checkWin(newPlayer);
+
 
 
 	//Keep the game loop going whilst the player keeps wanting to hit. When they stop, simulate the dealer and check results.
@@ -209,7 +211,7 @@ int main(){
 			response = Dealer::getUserInput();
 		}
 
-		cout << "You decided to hold...\n";
+		cout << "You decided to hold...\n\n";
 		cout << "Dealer will now finish dealing his side...\n";
 		newDealer.revealHiddenCard();
 		newDealer.finishDealing(newPlayer);
