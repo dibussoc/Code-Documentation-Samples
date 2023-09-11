@@ -7,6 +7,10 @@
 class Dealer : public Player
 {
 private:
+	//Value to denote whether the dealer is still hosting the game. 0 for no, 1 for yes.
+	int playing;
+
+	//Vector to represent the dealers deck
 	vector<Card> deck;
 
 	//Value of the dealers hand
@@ -20,6 +24,15 @@ private:
 public:
 	//Default Constructor
 	Dealer();
+
+	//Method for dealer to track that the game has started.
+	void startGame();
+
+	//Method for dealer to track that the game has started.
+	void endGame();
+
+	//Accessor to check the status of the game
+	int gameStatus();
 
 	//Method to generate fresh deck of cards
 	void generateDeck();

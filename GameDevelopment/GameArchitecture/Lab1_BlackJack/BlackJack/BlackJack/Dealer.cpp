@@ -15,6 +15,22 @@ using namespace std;
 Dealer::Dealer()
 {
 	this->generateDeck();
+	this->playing = 1;
+}
+
+void Dealer::startGame()
+{
+	this->playing = 1;
+}
+
+void Dealer::endGame() 
+{
+	this->playing = 0;
+}
+
+int Dealer::gameStatus()
+{
+	return this->playing;
 }
 
 void Dealer::generateDeck()
@@ -148,6 +164,8 @@ bool Dealer::getUserInput()
 
 	transform(response.begin(), response.end(), response.begin(), ::tolower);
 
+	cout << "\n";
+
 	if (response == "yes") {
 		return true;
 	}
@@ -172,6 +190,8 @@ bool Dealer::playerEligible(Player player)
 
 /**/
 int main(){
+	//Make the dealer
+	Dealer newDealer;
 	cout << "You wanna play a little game...?\n\n";
 	cout << "Type 'Yes' if you would like to play, or 'No' if you are a coward.\n";
 
@@ -184,37 +204,54 @@ int main(){
 		return 0;
 	}
 
-	Dealer newDealer;
-	Player newPlayer;
-	newDealer.startHands(newPlayer);
+	//Main game loop
+	while (newDealer.gameStatus()) {
+		cout << "--------------------------------------------------------------------------------------------------------------------\n\n";
+		cout << "Starting New Game!\n";
+		//Create a fresh instance of the game with the new dealer(fresh deck) and the approaching player
+		Dealer newDealer;
+		Player newPlayer;
+		newDealer.startHands(newPlayer);
 
-	//Check if you won or lost your starting hand
-	newDealer.checkWin(newPlayer);
+		//Check if you won or lost your starting hand
+		newDealer.checkWin(newPlayer);
 
-	newDealer.beckonPlayer();
-	response = Dealer::getUserInput();
-	newDealer.checkWin(newPlayer);
+		if (newDealer.playerEligible(newPlayer)) {
 
-
-
-	//Keep the game loop going whilst the player keeps wanting to hit. When they stop, simulate the dealer and check results.
-	if (response == true) {
-		while (newDealer.playerEligible(newPlayer) && response == true) {
-			cout << "\n";
-
-			//Give player the card and check score for win or loss
-			newDealer.dealCard(newPlayer);
-
-			newDealer.checkWin(newPlayer);
-			
 			newDealer.beckonPlayer();
 			response = Dealer::getUserInput();
+
+			//Keep the game loop going whilst the player keeps wanting to hit. When they stop, simulate the dealer and check results.
+			while (newDealer.playerEligible(newPlayer) && response == true) {
+				cout << "\n";
+
+				//Give player the card and check score for win or loss
+				newDealer.dealCard(newPlayer);
+
+				//Check if player over 21
+				newDealer.checkWin(newPlayer);
+				
+				//If ellgible ask to hit or not
+				if (newDealer.playerEligible(newPlayer)) {
+					newDealer.beckonPlayer();
+					response = Dealer::getUserInput();
+				}
+			}
+			//We only have to simulate if the response was set to false before ending
+			if (response == false) {
+				cout << "You decided to hold...\n\n";
+				cout << "Dealer will now finish dealing his side...\n";
+				newDealer.revealHiddenCard();
+				newDealer.finishDealing(newPlayer);
+			}
 		}
 
-		cout << "You decided to hold...\n\n";
-		cout << "Dealer will now finish dealing his side...\n";
-		newDealer.revealHiddenCard();
-		newDealer.finishDealing(newPlayer);
+		//Game over, ask to play again
+		cout << "\nWould you like to play again?\n";
+		response = Dealer::getUserInput();
+		if (response == false) {
+			newDealer.endGame();
+		}
 	}
 	return 0;
 }
