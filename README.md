@@ -11,5 +11,7 @@ Google IT Automation with Python -- Google in Partnership with Coursera
 Contact and Social
 ------------------------------------
 Name: Christopher DiBussolo
+
 Email: cdibussolo@outlook.com
+
 Linkdin: https://www.linkedin.com/in/chrisdibus/
