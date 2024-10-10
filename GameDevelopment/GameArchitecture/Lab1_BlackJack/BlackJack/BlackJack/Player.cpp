@@ -1,6 +1,6 @@
 #include "Player.h"
-#include <vector>;
-#include "card.h";
+#include <vector>
+#include "card.h"
 #include <iostream>
 #include <string>
 
